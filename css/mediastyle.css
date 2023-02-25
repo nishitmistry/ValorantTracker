@@ -12,17 +12,21 @@
 @media screen and (max-height:650px) {
     #sidebar{
         left:-550px;
+        height: fit-content;
     }
     #sidebar-content{
         flex-direction: row;
         align-items: center;
         height: fit-content;
     }
+    #sidebar-content #logo{
+        margin: 10px 0px;
+    }
     #sidebar #nav-links{
         flex-direction: row;
     }
-    #sidebar #nav-button{
-
+    #sidebar .nav-button{
+        top:20px;
         margin-left: 30px;
     }
     #nav-links a {
@@ -33,6 +37,11 @@
         margin-right: 5px;
     }
 }
-@media screen and (max-height:650px)and(max-width:650px) {
-    
+@media screen and (max-height:650px) and (max-width:650px) {
+    #sidebar{
+        display: none;
+    }
+    #nav-650-650{
+       display: block; 
+    }
 }
