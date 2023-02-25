@@ -18,12 +18,18 @@ function sidebarCollapse() {
     }
   }
 }
-function navbarCollapse(){
-  var v=document.getElementById("nav-check");
-  if(v.checked){
-    document.getElementById("nav-650-650").style.top="0px";
+function navbarCollapse(a){
+  if(a==1){
+    var v=document.getElementById("nav-check");
+    if(v.checked){
+      document.getElementById("nav-650-650").style.top="0px";
+    }
+    else if(!v.checked){
+      document.getElementById("nav-650-650").style.top="-300px";
+    }
   }
-  else if(!v.checked){
+  else{
+    document.getElementById("nav-check").checked = false;
     document.getElementById("nav-650-650").style.top="-300px";
   }
 }

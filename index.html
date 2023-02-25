@@ -20,10 +20,13 @@
 <body>
   <div id="nav-650-650">
     <div id="nav-content-650-650">
-      <a href="" class="" id="nav-650-650-logo">
-        <img src="assets/logo.png" alt="LOGO" srcset="" width="85px">
-      </a>  
-      <div id="nav-650-650-links" class="">
+      <div id="">
+        <a href="" class="" id="nav-logo-650-650">
+          <img src="assets/logo.png" alt="LOGO" srcset="" width="85px">
+        </a>
+        <button onclick="navbarCollapse(0)">&times;</button>
+      </div>
+      <div id="nav-links-650-650" class="">
         <a href="#home"><i class="fa-solid fa-chart-simple"></i></a>
         <a href="#news"><i class="fa-solid fa-chalkboard-user"></i> </i></a>
         <a href="#contact"><i class="fa-solid fa-file-pen"></i></a>
@@ -31,7 +34,7 @@
       </div>
     </div>
     <div class="nav-button">
-      <label for="nav-check" id="label-check" onclick="navbarCollapse()">
+      <label for="nav-check" id="label-check" onclick="navbarCollapse(1)">
       <input type="checkbox" id="nav-check"> 
         <span></span>
         <span></span>

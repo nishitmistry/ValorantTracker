@@ -45,3 +45,8 @@
        display: block; 
     }
 }
+@media screen and (max-height:350px) and (max-width:650px){
+    #nav-content-650-650 button{
+        display: inline-block;
+    }
+}

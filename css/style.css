@@ -8,7 +8,17 @@
     --secondary: #491C30;
 }
 
-/* side content */
+/* sidebar content */
+
+#sidebar {
+    transition-duration: 1s;
+    height: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: -145px;
+}
+
 #sidebar-content {
     display: flex;
     flex-direction: column;
@@ -19,18 +29,6 @@
     border-radius: 100px;
 }
 
-#sidebar {
-
-    /* display: none; */
-
-    transition-duration: 1s;
-    /* transform: translate(-500px); */
-    height: 100%;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    left: -145px;
-}
 
 #sidebar #nav-links {
     display: flex;
@@ -38,6 +36,7 @@
 }
 
 #logo {
+    text-decoration: none;
     padding: 0px 16px 0px 16px;
 }
 
@@ -117,15 +116,13 @@
 }
 
 
-/* #sidebar .nav-button input[type="checkbox"], */
-/* #nav-650-650  */
+
 .nav-button input[type="checkbox"] {
     display: none;
 }
 
 
-/* #sidebar .nav-button input[type="checkbox"]:checked~span:nth-of-type(1), */
-/* #nav-650-650  */
+
 .nav-button input[type="checkbox"]:checked~span:nth-of-type(1) {
     transform-origin: bottom;
     width: 40%;
@@ -134,8 +131,7 @@
 
 
 
-/* #sidebar .nav-button input[type="checkbox"]:checked~span:nth-of-type(2), */
-/* #nav-650-650  */
+
 .nav-button input[type="checkbox"]:checked~span:nth-of-type(2) {
 
     transform-origin: top;
@@ -145,8 +141,6 @@
 
 
 
-/* #sidebar .nav-button input[type="checkbox"]:checked~span:nth-of-type(3), */
-/* #nav-650-650 */
 .nav-button input[type="checkbox"]:checked~span:nth-of-type(3) {
     transform-origin: bottom;
     width: 40%;
@@ -154,7 +148,7 @@
 
 }
 
-/* <650px height && <650px width navbar */
+/* < 650px height && < 650px width navbar */
 #nav-650-650 {
     display: none;
     text-align: center;
@@ -162,24 +156,23 @@
     transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
     top: -300px;
 }
+#nav-logo-650-650{
+    text-decoration: none;
+}
 #nav-content-650-650{
-    
     background-color: var(--primary-bg)
-
 }
 
 #nav-650-650 .nav-button {
-
-    /* height:90%; */
     width: 80px;
     margin: 15px 10px;
 }
 
-#nav-650-650-links a:nth-child(1) {
+#nav-links-650-650 a:nth-child(1) {
     border-top: 2px black solid;
 }
 
-#nav-650-650-links a {
+#nav-links-650-650 a {
     border-bottom: 2px black solid;
     padding: 10px 5px;
     display: block;
@@ -188,6 +181,15 @@
     color: white;
 }
 
-#nav-650-650-links a:active {
+#nav-links-650-650 a:active {
     background-color: var(--secondary);
+}
+#nav-content-650-650 button{
+    display: none;
+    background-color: var(--primary-bg);
+    color: white;
+    border: none;
+    font-size: 30px;
+    position: relative;
+    left: 20%;
 }
