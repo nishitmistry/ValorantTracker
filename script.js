@@ -23,8 +23,10 @@ function navbarCollapse(a){
     var v=document.getElementById("nav-check");
     if(v.checked){
       document.getElementById("nav-650-650").style.top="0px";
+      document.getElementById("nav-650-650").style.zIndex="1";
     }
     else if(!v.checked){
+      document.getElementById("nav-650-650").style.zIndex="0";
       document.getElementById("nav-650-650").style.top="-300px";
     }
   }

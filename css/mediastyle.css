@@ -50,3 +50,14 @@
         display: inline-block;
     }
 }
+@media screen and (min-width:769px) {
+    #gamemode_heading{
+        display: none;
+    }
+}
+@media screen and (max-width:769px) {
+    
+    #gamemode_container{
+        width: 80vw;
+    }
+}

@@ -8,9 +8,14 @@
     --secondary: #491C30;
 }
 
+body {
+    background-color: black !important;
+}
+
 /* sidebar content */
 
 #sidebar {
+    z-index: 1;
     transition-duration: 1s;
     height: 100%;
     padding: 10px;
@@ -65,7 +70,7 @@
 /* nav side button */
 #sidebar .nav-button {
     position: absolute;
-    top: 3%;
+    top: 3.5%;
     left: 95%;
     margin-left: 10px;
 }
@@ -154,12 +159,14 @@
     text-align: center;
     position: relative;
     transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-    top: -300px;
+    top: -290px;
 }
-#nav-logo-650-650{
+
+#nav-logo-650-650 {
     text-decoration: none;
 }
-#nav-content-650-650{
+
+#nav-content-650-650 {
     background-color: var(--primary-bg)
 }
 
@@ -184,7 +191,8 @@
 #nav-links-650-650 a:active {
     background-color: var(--secondary);
 }
-#nav-content-650-650 button{
+
+#nav-content-650-650 button {
     display: none;
     background-color: var(--primary-bg);
     color: white;
@@ -192,4 +200,32 @@
     font-size: 30px;
     position: relative;
     left: 20%;
+}
+
+/*gamemode container*/
+#gamemode_container {
+    color: white;
+    background-color: var(--primary-bg);
+    width: 65vw;
+    height: 70px;
+    position: absolute;
+    top: 3.5%;
+    left: 15%;
+    border-radius: 50px;
+}
+/* bootstrap edits */
+#gamemode_container .navbar-nav {
+
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+    font-size: 1.15rem;
+}
+#gamemode_container .navbar-toggler{
+    margin: 10px;
+}
+#gamemode_heading{
+    font-size: 1.15rem;
+    margin-left: 10px;
 }
