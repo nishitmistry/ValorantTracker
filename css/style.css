@@ -70,7 +70,7 @@ body {
 /* nav side button */
 #sidebar .nav-button {
     position: absolute;
-    top: 3.5%;
+    top: 3.1%;
     left: 95%;
     margin-left: 10px;
 }
@@ -84,6 +84,7 @@ body {
     border-radius: 50%;
     padding: 5px;
     background-color: var(--primary-bg);
+    /* border: 2px solid rgb(170, 170, 170); */
 }
 
 
@@ -167,12 +168,13 @@ body {
 }
 
 #nav-content-650-650 {
+    width: 100vw;
     background-color: var(--primary-bg)
 }
 
 #nav-650-650 .nav-button {
     width: 80px;
-    margin: 15px 10px;
+    margin: 24px 10px;
 }
 
 #nav-links-650-650 a:nth-child(1) {
@@ -209,9 +211,13 @@ body {
     width: 65vw;
     height: 70px;
     position: absolute;
-    top: 3.5%;
+    top: 20px;
     left: 15%;
     border-radius: 50px;
+}
+#gamemode_heading{
+    font-size: 1.15rem;
+    margin-left: 10px;
 }
 /* bootstrap edits */
 #gamemode_container .navbar-nav {
@@ -225,7 +231,20 @@ body {
 #gamemode_container .navbar-toggler{
     margin: 10px;
 }
-#gamemode_heading{
-    font-size: 1.15rem;
-    margin-left: 10px;
+
+
+
+/* profile div */
+
+.profile-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    width: 60vw;
+    height: 70vh;
+    position: absolute;
+    top: 15%;
+    border:1px  white solid ;
+
 }
