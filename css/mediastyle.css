@@ -13,6 +13,13 @@
         margin: 0px 0px 20px 0px ;
     }
 }
+@media  screen and (max-width:850px)  {
+    #body-video{
+        /* width: 100vw; */
+        transform: scale(1.7);
+    }
+    
+}
 
 @media screen and (max-height:650px) {
     #sidebar{
@@ -58,19 +65,25 @@
         display: inline-block;
     }
 }
-@media screen and (min-width:769px) {
+@media screen and (min-width:767px) {
     #gamemode_heading{
         display: none;
     }
 }
-@media screen and (max-width:769px) {
+@media screen and (max-width:767px) {
     
     #gamemode_container{
+        z-index: 1;
         left: 110px;
-        width:calc(100vw - 110px);
+        width:calc(100vw - 120px);
     }
     #gamemode_content{
         background-color: var(--primary-bg);
     }
-
+}
+@media  screen and (max-width:1200px) and (min-width:850px)  {
+    #body-video{
+        transform: scale(1.4);
+    }
+    
 }

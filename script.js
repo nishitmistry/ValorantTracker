@@ -23,7 +23,7 @@ function navbarCollapse(a){
     var v=document.getElementById("nav-check");
     if(v.checked){
       document.getElementById("nav-650-650").style.top="0px";
-      document.getElementById("nav-650-650").style.zIndex="1";
+      document.getElementById("nav-650-650").style.zIndex="2";
     }
     else if(!v.checked){
       document.getElementById("nav-650-650").style.top="-290px";
@@ -36,3 +36,4 @@ function navbarCollapse(a){
     document.getElementById("nav-650-650").style.zIndex="0";
   }
 }
+
