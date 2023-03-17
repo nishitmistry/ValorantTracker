@@ -498,6 +498,11 @@ body {
     height: 50px;
 }
 
+.match-agent-img,
+.rating-img{
+    width: 100%;
+    height: auto;
+}
 
 
 
