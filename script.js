@@ -27,13 +27,13 @@ function navbarCollapse(a){
     }
     else if(!v.checked){
       document.getElementById("nav-650-650").style.top="-290px";
-      document.getElementById("nav-650-650").style.zIndex="0";
+      document.getElementById("nav-650-650").style.zIndex="1";
     }
   }
   else{
     document.getElementById("nav-check").checked = false;
     document.getElementById("nav-650-650").style.top="-290px";
-    document.getElementById("nav-650-650").style.zIndex="0";
+    document.getElementById("nav-650-650").style.zIndex="1";
   }
 }
 

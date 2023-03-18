@@ -2,25 +2,19 @@
     --primary-bg: #161622;
     --secondary: #491C30;
 }
-
-@media screen and (min-height:850px) {
-    #nav-links a {
-        margin: 30px 0px 30px 0px;
-        font-size: 30px;
+@media screen and (max-width:550px) {
+    #ability-kills-container {
+        flex-direction: column;
+        /* justify-content: space-around; */
+        align-items: start;
     }
-
-    #nav-links-logout a {
-        font-size: 30px;
-        margin: 0px 0px 20px 0px;
+    .ability-container{
+        margin: 30px;
     }
-}
-
-@media screen and (max-width:850px) and (min-width:650px) {
-    #body-video {
-        width: 100vw;
-        transform: scale(1.7);
+    .ability-kills-value{
+        margin-left: 30vw;
     }
-
+    
 }
 
 @media screen and (max-width:650px) {
@@ -31,6 +25,14 @@
     #gamemode_container {
         height: fit-content;
     }
+    #agent-stats-content {
+        
+        width: 80vw;
+    }
+    #player-stats {
+        justify-content: left;
+    }
+
 }
 
 @media screen and (max-height:650px) {
@@ -110,6 +112,58 @@
         padding: 10px;
         padding-bottom: 20px;
     }
+}
+
+
+@media screen and (min-height:850px) {
+    #nav-links a {
+        margin: 30px 0px 30px 0px;
+        font-size: 30px;
+    }
+
+    #nav-links-logout a {
+        font-size: 30px;
+        margin: 0px 0px 20px 0px;
+    }
+}
+@media screen and (max-width:850px) {
+    #character-container{
+        width: 40vw;
+        height: auto;
+    }
+}
+@media screen and (max-width:400px) {
+    #character-container{
+        width: 60vw;
+        height: auto;
+    }
+    #agent-stats {
+        width:80vw;
+        /* margin-left: 0px; */
+        margin-right: 0px;
+
+    }
+    #player-stats{
+        width: 80vw;
+    }
+    .section-2{
+        padding-right: 25vw;
+    }
+}
+
+@media screen and (max-width:850px) and (min-width:650px) {
+    #body-video {
+        width: 100vw;
+        transform: scale(1.7);
+    }
+
+}
+
+@media screen and (max-width:1000px ) and (min-width:650px) {
+    #player-stats{
+        justify-content: space-around;
+    }
+    
 }
 
 @media screen and (max-width:1200px) and (min-width:850px) {
