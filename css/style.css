@@ -381,7 +381,7 @@ body {
     font-family: 'Anton', sans-serif;
     font-size: 1.5rem;
 }
-.ability-logo img{
+.ability-logo{
     width: 50px;
 }
 .ability-kills-value{

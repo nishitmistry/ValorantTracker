@@ -82,12 +82,18 @@ function internet(){
     "omen",
     "jett",]
 
-    // fetch('https://valorant-api.com/v1/agents/'+agents[getRandomKey(keys)])
-    // .then(response => response.json())
-    // .then(json => {
-    //   document.getElementById("character-container").setAttribute("src", json["data"]["fullPortrait"])
-      
-    // })
+    fetch('https://valorant-api.com/v1/agents/'+agents[getRandomKey(keys)])
+    .then(response => response.json())
+    .then(json => {
+      // document.getElementById("character-container").setAttribute("src", json["data"]["fullPortrait"])
+      var ability_logo=document.getElementsByClassName("ability-logo")
+      count=0
+      for (var i of ability_logo){
+        i.setAttribute("src",json["data"]["abilities"][count]["displayIcon"])
+        count+=1
+      }
+
+    })
   }
   internet()
   function getRandomKey(keys) {
