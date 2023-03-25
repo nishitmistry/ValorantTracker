@@ -25,6 +25,12 @@
     #gamemode_container {
         height: fit-content;
     }
+    #character-container{
+        width: 80vw;
+    }
+    #character-image{
+        width: 90vw;
+    }
     #agent-stats-content {
         
         width: 80vw;
@@ -126,17 +132,24 @@
         margin: 0px 0px 20px 0px;
     }
 }
-@media screen and (max-width:850px) {
+/* @media screen and (max-width:850px) {
     #character-container{
-        width: 40vw;
+        width: 0vw;
         height: auto;
     }
-}
+} */
 @media screen and (max-width:400px) {
-    #character-container{
-        width: 60vw;
+    /* #character-container{
+        width: 90vw;
         height: auto;
+    } */
+    #ability-kills-heading {
+        margin-left: 10px;
     }
+    #agent-name{
+        font-size: 15vw;
+    }
+
     #agent-stats {
         width:80vw;
         /* margin-left: 0px; */
@@ -144,10 +157,14 @@
 
     }
     #player-stats{
-        width: 80vw;
+        width: 90vw;
+        justify-content: center;
     }
     .section-2{
         padding-right: 25vw;
+    }
+    .stats{
+        text-align: center;
     }
 }
 
@@ -155,6 +172,9 @@
     #body-video {
         width: 100vw;
         transform: scale(1.7);
+    }
+    #character-container{
+        width: 80vw;
     }
 
 }
@@ -170,6 +190,9 @@
     #body-video {
         width: 100vw;
         transform: scale(1.4);
+    }
+    #character-container{
+        width: 25vw;
     }
 
 }
