@@ -96,46 +96,107 @@ function setMainAgent(agentName){
 
     })
   }
-function setMatchHistoryAgent(agentNames){
-    let count=0
-    // var a=document.getElementsByClassName("match-agent-img")
-    for (let i=0; i<agentNames.length; i++){
-      fetch('https://valorant-api.com/v1/agents/'+agents[agentNames[i]])
-      .then(response => response.json())
-      .then(json => {
-        var agent_hist_img=document.getElementsByClassName("match-agent-img")[i]
-        agent_hist_img.setAttribute("src",json["data"]["displayIcon"])
-      });
-    }
-}
+// function setMatchHistoryAgent(agentNames){
+//     let count=0
+//     // var a=document.getElementsByClassName("match-agent-img")
+//     for (let i=0; i<agentNames.length; i++){
+//       fetch('https://valorant-api.com/v1/agents/'+agents[agentNames[i]])
+//       .then(response => response.json())
+//       .then(json => {
+//         var agent_hist_img=document.getElementsByClassName("match-agent-img")[i]
+//         agent_hist_img.setAttribute("src",json["data"]["displayIcon"])
+//       });
+//     }
+// }
 function setStatValue(statValues){
-  let c=0
-  // var a=document.getElementsByClassName("match-agent-img")
+  let stats_div=document.getElementsByClassName("stats-value")
+  for (let i=0; i<statValues.length; i+=1){
+    stats_div[i].innerHTML=statValues[i]
+  }
+}
+function setAbilityStatValue(abilityValues){
+  let abilityStats=document.getElementsByClassName("ability-kills-value")
+  for (let i=0; i<abilityValues.length; i+=1){
+    abilityStats[i].innerHTML=abilityValues[i]
+  }
+}
+function setMatchHistoryStat(wins,losses,kda,map,agentNames,ratings)
+{
+  let match_wins=document.getElementsByClassName("match-score-win")
+  for (let i=0; i<match_wins.length; i++){
+    match_wins[i].innerHTML=wins[i];
+  }
 
-  for (let i=0; i<statValues.length; i++){
-    let stats_div=document.getElementsByClassName("stats-value")[c]
-    console.log(stats_div)
-    stats_div.innerHTML=statValues[c]
-    c+=1
+  let match_losses=document.getElementsByClassName("match-score-loss")
+  for (let i=0; i<match_losses.length; i++){
+    match_losses[i].innerHTML=losses[i];
+  }
+
+  let match_kda=document.getElementsByClassName("match-kda-value")
+  for (let i=0; i<match_kda.length; i++){
+    match_kda[i].innerHTML=kda[i];
+  }
+
+  let match_map=document.getElementsByClassName("match-map")
+  for (let i=0; i<match_map.length; i++){
+    match_map[i].innerHTML=map[i];
+  }
+
+  let match_rating=document.getElementsByClassName("rating-img")
+  for (let i=0; i<ratings.length; i++){
+    setRatingImg(match_rating[i],ratings[i])
+  }
+  
+
+  for (let i=0; i<agentNames.length; i++){
+    fetch('https://valorant-api.com/v1/agents/'+agents[agentNames[i]])
+    .then(response => response.json())
+    .then(json => {
+      var agent_hist_img=document.getElementsByClassName("match-agent-img")[i]
+      agent_hist_img.setAttribute("src",json["data"]["displayIcon"])
+    });
   }
 }
 
 
-  function getRandomKey(keys) {
 
-    return keys[Math.floor(Math.random() * keys.length)];
+  function setRatingImg(element,rating) {
+    fetch('https://valorant-api.com/v1/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04')
+    .then(response => response.json())
+    .then(json => {
+      a=json["data"]["tiers"]
+      for(let i=0;i<a.length;i++)
+      {
+        if(rating==json["data"]["tiers"][i]["tierName"])
+        {
+          element.setAttribute("src",json["data"]["tiers"][i]["smallIcon"])
+        }
+      }
+      });
   }
   var unrated={
     "main-agent":"gekko",
-    "agent-played-time":"Played 164Hrs",
+    "agent-played-time":"Played 198Hrs",
     "stats-value":["1.2","130.5","60%","40%"],
     "ability-kills-value":["0.76","0.53","0.2"],
     "match-score-win":["13","10","2","13"],
     "match-score-loss":["7","13","13","5"],
     "match-kda-value":["12/3/4","24/7/9","5/6/8","31/13/4"],
     "match-map":["IceBox","Haven","Split","Haven"],
-    "rating-img":["d2","d1","d1","d1"],
+    "rating-img":["UNRANKED","UNRANKED","UNRANKED","UNRANKED"],
     "match-agent-img":["breach","fade","sova","reyna"]
+  }
+  var ranked={
+    "main-agent":"neon",
+    "agent-played-time":"Played 210Hrs",
+    "stats-value":["1.5","120.5","70%","30%"],
+    "ability-kills-value":["0.66","0.73","0.4"],
+    "match-score-win":["13","10","2","13"],
+    "match-score-loss":["7","13","13","5"],
+    "match-kda-value":["40/3/4","24/7/9","5/6/8","31/13/4"],
+    "match-map":["IceBox","Haven","Split","Haven"],
+    "rating-img":["IMMORTAL 3","IMMORTAL 2","IMMORTAL 2","IMMORTAL 1"],
+    "match-agent-img":["sova","reyna","neon","neon"]
   }
   function setContent(){}
 
@@ -143,9 +204,70 @@ function setStatValue(statValues){
     
     if (mode=="ur")
     {
-
+      document.getElementById("agent-played-time").innerHTML=unrated["agent-played-time"]
+      setMatchHistoryStat(unrated["match-score-win"],unrated["match-score-loss"],unrated["match-kda-value"],unrated["match-map"],unrated["match-agent-img"],unrated["rating-img"])
+      setMainAgent(unrated["main-agent"])
+      setStatValue(unrated["stats-value"])
+      setAbilityStatValue(unrated["ability-kills-value"])
     }
+    else if(mode=="ra"){
+      document.getElementById("agent-played-time").innerHTML=ranked["agent-played-time"]
+      setMatchHistoryStat(ranked["match-score-win"],ranked["match-score-loss"],ranked["match-kda-value"],ranked["match-map"],ranked["match-agent-img"],ranked["rating-img"])
+      setMainAgent(ranked["main-agent"])
+      setStatValue(ranked["stats-value"])
+      setAbilityStatValue(ranked["ability-kills-value"])
+    }
+    else if(mode=="dm"){
+      document.getElementById("agent-played-time").innerHTML=deathmatch["agent-played-time"]
+      setMatchHistoryStat(deathmatch["match-score-win"],deathmatch["match-score-loss"],deathmatch["match-kda-value"],deathmatch["match-map"],deathmatch["match-agent-img"],deathmatch["rating-img"])
+      setMainAgent(deathmatch["main-agent"])
+      setStatValue(deathmatch["stats-value"])
+      setAbilityStatValue(deathmatch["ability-kills-value"])
+    }
+    else if(mode=="re"){
+      document.getElementById("agent-played-time").innerHTML=replication["agent-played-time"]
+      setMatchHistoryStat(replication["match-score-win"],replication["match-score-loss"],replication["match-kda-value"],replication["match-map"],replication["match-agent-img"],replication["rating-img"])
+      setMainAgent(replication["main-agent"])
+      setStatValue(replication["stats-value"])
+      setAbilityStatValue(replication["ability-kills-value"])
+    }
+    
+
   }
-setMatchHistoryAgent(unrated["match-agent-img"])
-setMainAgent(unrated["main-agent"])
-setStatValue(unrated["stats-value"])
+
+  document.getElementById("agent-played-time").innerHTML=unrated["agent-played-time"]
+  setMatchHistoryStat(unrated["match-score-win"],unrated["match-score-loss"],unrated["match-kda-value"],unrated["match-map"],unrated["match-agent-img"],unrated["rating-img"])
+  setMainAgent(unrated["main-agent"])
+  setStatValue(unrated["stats-value"])
+  setAbilityStatValue(unrated["ability-kills-value"])
+
+ranks=[
+  "UNRANKED",
+"Unused1",
+"Unused2",
+"IRON 1",
+"IRON 2",
+"IRON 3",
+"BRONZE 1",
+"BRONZE 2",
+"BRONZE 3",
+"SILVER 1",
+"SILVER 2",
+"SILVER 3",
+"GOLD 1",
+"GOLD 2",
+"GOLD 3",
+"PLATINUM 1",
+"PLATINUM 2",
+"PLATINUM 3",
+"DIAMOND 1",
+"DIAMOND 2",
+"DIAMOND 3",
+"ASCENDANT 1",
+"ASCENDANT 2",
+"ASCENDANT 3",
+"IMMORTAL 1",
+"IMMORTAL 2",
+"IMMORTAL 3",
+"RADIANT",
+]

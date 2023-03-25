@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv = "refresh" content = "14; url = index.html" />
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #FA5A69;
+            overflow: hidden;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #body-video{
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <video src="assets\\preloader.mp4" id="body-video" autoplay muted></video>
+    <script>
+    let viewportHeight = window.innerHeight;
+    let viewportWidth = window.innerWidth;
+    if (viewportWidth < 650) {
+      document.getElementById("body-video").setAttribute('src', 'assets\\preloader-650.mp4');
+    }
+    else{
+        document.getElementById("body-video").setAttribute('src', 'assets\\preloader.mp4');
+    }
+    </script>
+</body>
+</html>

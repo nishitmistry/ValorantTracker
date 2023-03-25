@@ -14,7 +14,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-  <script src="script.js"></script>
   <link rel="stylesheet" href="css/mediastyle.css">
   <link rel="stylesheet" href="resourses/FONTS/css/all.min.css">
   <script src="resourses/FONTS/js/all.min.js"></script>
@@ -22,7 +21,7 @@
 
 <body>
   <div id="body-video-container">
-
+    
     <video src="assets/background.mp4" autoplay muted loop id="body-video"></video>
   </div>
   <!-- $###############compulsory################# -->
@@ -81,24 +80,24 @@
           Gamemode
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gamemode_content"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-caret-down"></i>
         </button>
         <div class="collapse navbar-collapse" id="gamemode_content">
           <div class="navbar-nav">
-            <a class="nav-link active" href="#" onsubmit="changepage('ur')">Unrated</a>
-            <a class="nav-link" href="#">Ranked</a>
-            <a class="nav-link" href="#">Deathmatch</a>
-            <a class="nav-link" href="#">Replication</a>
+            <a class="nav-link" href="#" id="Unrated" onclick="changePage('ur')">Unrated</a>
+            <a class="nav-link" href="#" id="Ranked"onclick="changePage('ra')">Ranked</a>
+            <a class="nav-link"  disabled id="Deathmatch"href="#">Deathmatch</a>
+            <a class="nav-link"  disabled id="Replication"href="#">Replication</a>
           </div>
         </div>
       </div>
     </div>
   </div>
   <!-- $###############compulsory################# -->
-
-
-
+  
+  
+  
   <div id="main_content">
     <div id="main_content_heading">
       Welcome back!!
@@ -111,7 +110,7 @@
         <div id="character-container">
           <img src="assets/breach/breach.jpg" alt=""  srcset="" id="character-image">
         </div>
-
+        
         <div id="profile">
           <div id="agent-stats">
             <div id="agent-stats-heading">
@@ -127,7 +126,7 @@
             </div>
           </div>
           <div id="player-stats">
-
+            
             <div class="stats">
               <div class="stats-heading">
                 K/D Ratio
@@ -193,7 +192,7 @@
             </div>
           </div>
         </div>
-      <!-- </div> -->
+        <!-- </div> -->
       <div id="match-history-container">
         <div id="match-history-heading">
           Last Matches
@@ -205,7 +204,7 @@
             <div class="day-wise-heading">
               Today
             </div>
-
+            
             <div class="match-container win">
               <div class="match-agent">
                 <img src="assets/breach/displayicon.png" class="match-agent-img" height="50px" width="50px" alt="" srcset="">
@@ -267,11 +266,11 @@
                 <img src="assets/ranks/Diamond-2.png" class="rating-img" height="50px" width="50px" alt="" srcset="">
               </div>
             </div>
-
+            
             <div class="day-wise-heading">
               29 March
             </div>
-
+            
             <div class="match-container loss">
               <div class="match-agent">
                 <img src="assets/breach/displayicon.png" class="match-agent-img" height="50px" width="50px" alt="" srcset="">
@@ -302,7 +301,7 @@
                 <img src="assets/ranks/Diamond-2.png" class="rating-img" height="50px" width="50px" alt="" srcset="">
               </div>
             </div>
-
+            
             <div class="match-container win">
               <div class="match-agent">
                 <img src="assets/breach/displayicon.png" class="match-agent-img" height="50px" width="50px" alt="" srcset="">
@@ -333,17 +332,17 @@
                 <img src="assets/ranks/Diamond-2.png" height="50px" class="rating-img" width="50px" alt="" srcset="">
               </div>
             </div>
-
+            
           </div>
         </div>
-
+        
       </div>
     </div>
     
   </div>
   
+  <script src="script.js"></script>
   <script>
-    console.log(document.getElementById("body-video").getAttribute('src'));
     let viewportHeight = window.innerHeight;
     let viewportWidth = window.innerWidth;
     if (viewportWidth < 650) {
