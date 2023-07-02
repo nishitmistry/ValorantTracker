@@ -1,3 +1,5 @@
+
+
 function sidebarCollapse() {
   var v = document.getElementById("check");
   let height = screen.height;
@@ -200,7 +202,16 @@ function setMatchHistoryStat(wins,losses,kda,map,agentNames,ratings)
   }
   function setContent(){}
 
-  function changePage(mode){
+  function changePage(id,mode){
+    
+    //setting the gamemode links active
+    var links=document.getElementsByClassName("gamemode_links")
+    for(let i =0;i<links.length;i++)
+    {
+      links[i].classList.remove("active")
+    }
+    id.classList.toggle("active");
+
     
     if (mode=="ur")
     {
