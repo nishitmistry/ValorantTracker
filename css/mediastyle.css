@@ -41,7 +41,7 @@
 
 }
 
-@media screen and (max-height:650px) {
+@media screen and (max-height:620px) {
     #sidebar {
         left: -550px;
         height: fit-content;
